@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+
+void racunanje(int pocetak, int kraj)
+{
+  int rezultat, counter;
+  counter=0;
+  for(int i=pocetak;i<kraj+1;i++){
+    counter+=1;
+    //x^2 + 2x - 5
+    rezultat=i*i+2*i-5;
+    cout<<"Rj. za ["<<counter<<"] broj gdje je vr. X["<<i<<"] je: "<<rezultat<<endl;
+  }
+}
+
+int main()
+{
+  int pocetak, kraj;
+
+  restart:
+  cout<<"Unesite pocetak opsega: ";
+  cin>>pocetak;
+  cout<<"Unesite kraj opsega: ";
+  cin>>kraj;
+
+  if(pocetak>kraj || pocetak==kraj){
+    cout<<"Pocetak opsega ne moze biti manji od kraja opsega. Pokusajte ponovo";
+    cout<<endl;
+    goto restart;
+    
+  }
+  else{
+    racunanje(pocetak,kraj);
+  }
+
+
+return 0;
+}
